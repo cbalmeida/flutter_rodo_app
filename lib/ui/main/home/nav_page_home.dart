@@ -84,6 +84,18 @@ class _NavPageHomeState extends State<NavPageHome> {
   }
 
   void showVehicleTypeScreen(BuildContext context, VehicleType vehicleType) {
+    Navigator.push(
+      context,
+      CupertinoPageRoute(
+        builder: (context) => VehicleTypeScreen(
+          vehicleType: vehicleType,
+          onPressBack: (BuildContext context) {
+            Navigator.pop(context, null);
+          },
+        ),
+      ),
+    );
+    /*
     setState(() {
       screenList.insert(
         0,
@@ -97,5 +109,6 @@ class _NavPageHomeState extends State<NavPageHome> {
         ),
       );
     });
+     */
   }
 }

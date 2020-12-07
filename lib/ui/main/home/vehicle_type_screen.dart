@@ -71,19 +71,25 @@ class _VehicleTypeScreenState extends State<VehicleTypeScreen> {
       child: Column(
         children: [
           widget.vehicleType.isImageAnAsset
-              ? Image.asset(
-                  widget.vehicleType.imagePath,
-                  //width: 105,
-                  height: 50.4,
-                  isAntiAlias: true,
-                  filterQuality: FilterQuality.high,
+              ? Hero(
+                  tag: "vehicleType.id." + widget.vehicleType.id.toString(),
+                  child: Image.asset(
+                    widget.vehicleType.imagePath,
+                    //width: 105,
+                    height: 50.4,
+                    isAntiAlias: true,
+                    filterQuality: FilterQuality.high,
+                  ),
                 )
-              : Image.network(
-                  widget.vehicleType.imagePath,
-                  //width: 105,
-                  height: 50.4,
-                  isAntiAlias: true,
-                  filterQuality: FilterQuality.high,
+              : Hero(
+                  tag: "vehicleType.id." + widget.vehicleType.id.toString(),
+                  child: Image.network(
+                    widget.vehicleType.imagePath,
+                    //width: 105,
+                    height: 50.4,
+                    isAntiAlias: true,
+                    filterQuality: FilterQuality.high,
+                  ),
                 ),
           Text(
             widget.vehicleType.name,

@@ -149,19 +149,25 @@ class _SearchVehicleTypeScreenState extends State<SearchVehicleTypeScreen> {
         child: Column(
           children: [
             vehicleType.isImageAnAsset
-                ? Image.asset(
-                    vehicleType.imagePath,
-                    //width: 105,
-                    height: 50.4,
-                    isAntiAlias: true,
-                    filterQuality: FilterQuality.high,
+                ? Hero(
+                    tag: "vehicleType.id." + vehicleType.id.toString(),
+                    child: Image.asset(
+                      vehicleType.imagePath,
+                      //width: 105,
+                      height: 50.4,
+                      isAntiAlias: true,
+                      filterQuality: FilterQuality.high,
+                    ),
                   )
-                : Image.network(
-                    vehicleType.imagePath,
-                    //width: 105,
-                    height: 50.4,
-                    isAntiAlias: true,
-                    filterQuality: FilterQuality.high,
+                : Hero(
+                    tag: "vehicleType.id." + vehicleType.id.toString(),
+                    child: Image.network(
+                      vehicleType.imagePath,
+                      //width: 105,
+                      height: 50.4,
+                      isAntiAlias: true,
+                      filterQuality: FilterQuality.high,
+                    ),
                   ),
             Text(
               vehicleType.name,
